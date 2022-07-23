@@ -44,19 +44,19 @@ class Mant_clientes {
                     break;
                 case 3:
                     boolean found = false;
-                    System.out.print("Digite el numero de cliente a eliminar: ");
-                    int numcl=teclado.nextInt();
+                    System.out.print("Digite el Nombre del cliente a eliminar: ");
+                    String nomcl=teclado1.nextLine();
                     System.out.println("-------------------------------------------------");
                     i = cl.iterator();
                     while (i.hasNext()) {
                         Cliente c = i.next();
-                        if(c.getClnumero()== numcl){
+                        if(c.clnombre.equals(nomcl)){
                             i.remove();
                             found= true;
                         }
                     }
                     if (!found){
-                        System.out.println("El numero digitado no se encuentra.");
+                        System.out.println("El Nombre digitado no se encuentra.");
                     }else{
                         System.out.println("El cliente se ha borrado exitosamente");
                     }
@@ -71,11 +71,11 @@ class Mant_clientes {
                     while (li.hasNext()) {
                         Cliente c = li.next();
                         if(c.getClnumero()== clnum){
-                            System.out.print("Ingrese el nuevo nombre de empleado: ");
+                            System.out.print("Ingrese el nuevo nombre de Cliente: ");
                             clnom =teclado1.nextLine();
-                            System.out.print("Ingrese el nuevo numero de Telefono del empleado: ");
+                            System.out.print("Ingrese el nuevo numero de Telefono del Cliente: ");
                             clnumTel =teclado.nextInt();
-                            System.out.print("Ingrese el nuevo Email del empleado: ");
+                            System.out.print("Ingrese el nuevo Email del Cliente: ");
                             clem =teclado1.nextLine();
                             li.set(new Cliente(clnum, clnom, clnumTel, clem));
                             found= true;
