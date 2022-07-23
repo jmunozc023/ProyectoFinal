@@ -3,6 +3,7 @@ package com.mycompany.proyfinal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Scanner;
 
 
@@ -46,17 +47,53 @@ public class ProyFinal {
                     System.out.println("-------------------------------------------------");
                     break;
                 case 3:
-                     
+                    boolean found = false;
+                    System.out.print("Digite el numero de cliente a eliminar: ");
+                    int numcl=teclado.nextInt();
+                    System.out.println("-------------------------------------------------");
+                    i = cl.iterator();
+                    while (i.hasNext()) {
+                        Cliente c = i.next();
+                        if(c.getClnumero()== numcl){
+                            i.remove();
+                            found= true;
+                        }
+                    }
+                    if (!found){
+                        System.out.println("El numero digitado no se encuentra.");
+                    }else{
+                        System.out.println("El cliente se ha borrado exitosamente");
+                    }
+                    System.out.println("-------------------------------------------------");
                     break;
                 case 4:
+                    found = false;
+                    System.out.print("Digite el numero de cliente a eliminar: ");
+                    clnum=teclado.nextInt();
+                    System.out.println("-------------------------------------------------");
+                    ListIterator<Cliente> li= cl.listIterator();
+                    while (li.hasNext()) {
+                        Cliente c = li.next();
+                        if(c.getClnumero()== clnum){
+                            System.out.print("Ingrese el nuevo nombre de empleado: ");
+                            clnom =teclado1.nextLine();
+                            System.out.print("Ingrese el nuevo numero de Telefono del empleado: ");
+                            clnumTel =teclado.nextInt();
+                            System.out.print("Ingrese el nuevo Email del empleado: ");
+                            clem =teclado1.nextLine();
+                            li.set(new Cliente(clnum, clnom, clnumTel, clem));
+                            found= true;
+                        }
+                    }
+                    if (!found){
+                        System.out.println("El numero digitado no se encuentra.");
+                    }else{
+                        System.out.println("El cliente se ha modificado exitosamente");
+                    }
+                    System.out.println("-------------------------------------------------");
                     
                     break;
-                case 0:
-                     
-                    break;     
-                 
-                default:
-                    throw new AssertionError();
+              
             }
         } while (opcion !=0);
 
