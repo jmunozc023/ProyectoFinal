@@ -57,6 +57,22 @@ public class Cliente {
         return "Cliente " + "Numero:" + clnumero + ", Nombre:" + clnombre + ", Telefono:" + clnumeroTel + ", Email:" + clemail;
     }
 
+    public void clnumero() {
+        
+    }
+
+    public void clnombre() {
+        
+    }
+
+    public void clnumeroTel() {
+        
+    }
+
+    public void clemail() {
+        
+    }
+
     
     
    
