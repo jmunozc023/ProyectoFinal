@@ -20,10 +20,12 @@ public class Menu {
             switch (opcion) {
                 case 1:
                     Mant_clientes mancli = new Mant_clientes();
+                  
                     mancli.funcional();
                     break;
                 case 2:
                     Mant_inventario maninv = new Mant_inventario();
+                    maninv.inventariobase();
                     maninv.funcion();
                     break;
                 case 3:
