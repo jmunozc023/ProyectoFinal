@@ -1,5 +1,5 @@
 package com.mycompany.proyfinal;
-
+//Clase para crear el objeto de Cliente
 public class Cliente {
     int clnumero;
     String clnombre;

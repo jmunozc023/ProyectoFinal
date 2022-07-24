@@ -1,6 +1,6 @@
 
 package com.mycompany.proyfinal;
-
+//En esta clase se declara el nuevo menu de Mantenimiento de clientes junto con toda la funcionalidad
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
