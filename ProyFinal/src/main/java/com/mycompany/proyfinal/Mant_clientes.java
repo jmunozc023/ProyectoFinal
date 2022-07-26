@@ -8,11 +8,13 @@ import java.util.ListIterator;
 import java.util.Scanner;
 
 class Mant_clientes {
-      int opcion=-1;
+        int opcion=-1;
         Scanner teclado= new Scanner(System.in);
         Scanner teclado1= new Scanner(System.in);
-        List<Cliente> cl =new ArrayList<>();
+        Menu men=new Menu();
+        
         public void funcional(){
+        men.clientesBase();
         do {            
             System.out.println("1. Ingreso de clientes");
             System.out.println("2. Mostrar clientes");
@@ -30,12 +32,12 @@ class Mant_clientes {
                     int clnumTel= teclado.nextInt();
                     System.out.print("Ingrese el email del Cliente: ");
                     String clem= teclado1.nextLine();
-                    cl.add(new Cliente(clnum,clnom,clnumTel,clem));
+                    men.cl.add(new Cliente(clnum,clnom,clnumTel,clem));
                     
                     break;
                 case 2:
                     System.out.println("-------------------------------------------------");
-                    Iterator<Cliente> i = cl.iterator();
+                    Iterator<Cliente> i = men.cl.iterator();
                     while (i.hasNext()) {
                         Cliente c = i.next();
                         System.out.println(c.toString());
@@ -47,7 +49,7 @@ class Mant_clientes {
                     System.out.print("Digite el Nombre del cliente a eliminar: ");
                     String nomcl=teclado1.nextLine();
                     System.out.println("-------------------------------------------------");
-                    i = cl.iterator();
+                    i = men.cl.iterator();
                     while (i.hasNext()) {
                         Cliente c = i.next();
                         if(c.clnombre.equals(nomcl)){
@@ -67,7 +69,7 @@ class Mant_clientes {
                     System.out.print("Digite el numero de cliente a eliminar: ");
                     clnum=teclado.nextInt();
                     System.out.println("-------------------------------------------------");
-                    ListIterator<Cliente> li= cl.listIterator();
+                    ListIterator<Cliente> li= men.cl.listIterator();
                     while (li.hasNext()) {
                         Cliente c = li.next();
                         if(c.getClnumero()== clnum){
@@ -93,6 +95,9 @@ class Mant_clientes {
             }
         } while (opcion !=0);
         }
+
+
+
 
 
 }

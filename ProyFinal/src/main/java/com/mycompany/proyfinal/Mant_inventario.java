@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 
 public class Mant_inventario {
-    static List<Articulos> Inventario =new ArrayList<>();
+    public List<Articulos> Inventario =new ArrayList<>();
     
     public void inventariobase() {
         
@@ -113,4 +113,7 @@ public class Mant_inventario {
             }
         } while (opcion !=0);
     }
+    public void Inventario(){
+    }
 }
+

@@ -18,6 +18,7 @@ public class Cliente {
 
     Cliente() {
         
+        
     }
 
     public int getClnumero() {
