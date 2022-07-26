@@ -14,7 +14,7 @@ class Mant_clientes {
         Menu men=new Menu();
         
         public void funcional(){
-        men.clientesBase();
+        //men.clientesBase();
         do {            
             System.out.println("1. Ingreso de clientes");
             System.out.println("2. Mostrar clientes");
