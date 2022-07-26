@@ -9,9 +9,9 @@ import java.util.Scanner;
 
 
 public class Mant_inventario {
-    public List<Articulos> Inventario =new ArrayList<>();
+    Menu men = new Menu();
     
-    public void inventariobase() {
+    /*public void inventariobase() {
         
         
         Inventario.add(new Articulos(1001, "Jeans Mezclilla", 34, 22450));
@@ -24,7 +24,7 @@ public class Mant_inventario {
         Inventario.add(new Articulos(1008,"Sueter",45,13670));
         Inventario.add(new Articulos(1009,"Botines",28,22990));
         Inventario.add(new Articulos(1010,"Tennis",45,24560));
-    }
+    }*/
     public void funcion(){
         int opcion=-1;
         Scanner teclado= new Scanner(System.in);
@@ -41,7 +41,7 @@ public class Mant_inventario {
             switch (opcion) {
                 case 1:
                     System.out.println("-------------------------------------------------");
-                    Iterator<Articulos> x = Inventario.iterator();
+                    Iterator<Articulos> x = men.Inventario.iterator();
                     while (x.hasNext()) {
                         Articulos c = x.next();
                         System.out.println(c.toString());
@@ -57,7 +57,7 @@ public class Mant_inventario {
                     int invcant= teclado.nextInt();
                     System.out.print("Ingrese el precio: ");
                     int invprec= teclado.nextInt();
-                    Inventario.add(new Articulos(invidx,invnom,invcant,invprec));
+                    men.Inventario.add(new Articulos(invidx,invnom,invcant,invprec));
                     System.out.println("El articulo se ha agregado exitosamente.");
                     System.out.println("");
                     
@@ -67,7 +67,7 @@ public class Mant_inventario {
                     System.out.print("Digite el numero de posicion del articulo a eliminar: ");
                     int index=teclado.nextInt();
                     System.out.println("-------------------------------------------------");
-                    x = Inventario.iterator();
+                    x = men.Inventario.iterator();
                     while (x.hasNext()) {
                         Articulos c = x.next();
                         if(c.getPosicion()== index){
@@ -87,7 +87,7 @@ public class Mant_inventario {
                     System.out.print("Digite el numero de posicion del articulo a modificar: ");
                     invidx=teclado.nextInt();
                     System.out.println("-------------------------------------------------");
-                    ListIterator<Articulos> v= Inventario.listIterator();
+                    ListIterator<Articulos> v= men.Inventario.listIterator();
                     while (v.hasNext()) {
                         Articulos c = v.next();
                         if(c.getPosicion()== invidx){
