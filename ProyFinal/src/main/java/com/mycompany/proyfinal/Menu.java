@@ -1,7 +1,6 @@
 package com.mycompany.proyfinal;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,11 +14,7 @@ public class Menu {
     public List<Cliente> cl =new ArrayList<>();
     public List<Articulos> Inventario =new ArrayList<>();
     public List<Factura> fac= new ArrayList<>();
-   
-   
-    
-    
-    
+ 
     public void opciones(){
         Funciones func= new Funciones();
         func.clientesBase();  
