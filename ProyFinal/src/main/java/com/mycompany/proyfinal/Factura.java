@@ -3,28 +3,26 @@ package com.mycompany.proyfinal;
 
 public class Factura {
 
-    private Cliente cli;
-    private Articulos art;
+    
     private float total;
     private float iva;
     private float subtotal;
-
-    public Cliente getCli() {
-        return cli;
+    private float cantidadart;
+    
+    public float getCantidadart() {
+        return cantidadart;
     }
 
-    public void setCli(Cliente cli) {
-        this.cli = cli;
+    public void setCantidadart(float cantidadart) {
+        this.cantidadart = cantidadart;
     }
-
-    public Articulos getArt() {
-        return art;
+    
+    public Factura(float cantidadart) {
+        this.cantidadart = cantidadart;
     }
+    
 
-    public void setArt(Articulos art) {
-        this.art = art;
-    }
-
+    
     public float getTotal() {
         return total;
     }
@@ -49,16 +47,16 @@ public class Factura {
         this.subtotal = subtotal;
     }
 
-    public Factura(Cliente cli, Articulos art, float total, float iva, float subtotal) {
-        this.cli = cli;
-        this.art = art;
+    public Factura(float total, float iva, float subtotal, float cantidadart) {
+
         this.total = total;
         this.iva = iva;
         this.subtotal = subtotal;
+        this.cantidadart= cantidadart;
     }
       @Override
     public String toString() {
-        return "Factura{" + "cli=" + cli + ", art=" + art + ", total=" + total + ", iva=" + iva + ", subtotal=" + subtotal + '}';
+        return "Factura{" + ", total=" + total + ", iva=" + iva + ", subtotal=" + subtotal + ", cantidad=" + cantidadart + '}';
     }
 
 }

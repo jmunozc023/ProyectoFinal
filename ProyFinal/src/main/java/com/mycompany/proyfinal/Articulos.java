@@ -49,11 +49,11 @@ public class Articulos {
         this.cantDisp = cantDisp;
     }
 
-    public int getPrecio(int precio) {
+    public int getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio() {
         this.precio = precio;
     }
 
