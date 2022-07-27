@@ -1,15 +1,22 @@
 package com.mycompany.proyfinal;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
 //Crea el menu principal, aqui solo se llaman las clases principales
 public class Menu {
+
     Scanner leer = new Scanner(System.in);
+    Scanner leer1 = new Scanner(System.in);
     int opcion;
+    String buscar;
     public List<Cliente> cl =new ArrayList<>();
     public List<Articulos> Inventario =new ArrayList<>();
+   
+   
+    
     
     /*public void clientesBase(){
         cl.add(new Cliente(1001, "Jose Muñoz", 87026720, "jmunozc023@ulacit.ed.cr"));
@@ -17,9 +24,8 @@ public class Menu {
         cl.add(new Cliente(1003, "Julliam Salazar", 57124752, "jsalazarg423@ulacit.ed.cr"));
     }  */   
     public void opciones(){
-        Mant_clientes mancli = new Mant_clientes();
-        Mant_inventario maninv = new Mant_inventario();
-        
+        Funciones func= new Funciones();
+          
         
         do {
             System.out.println("Menu de principal.");
@@ -33,15 +39,22 @@ public class Menu {
             
             switch (opcion) {
                 case 1:
-                    mancli.funcional();
+                    func.Mant_clientes();
                     
                     break;
                 case 2:
-                    //maninv.inventariobase();
-                    maninv.funcion();
+                    func.Mant_inventario();
+                    
                     break;
                 case 3:
-                   
+                    List<Cliente> cl1 =new ArrayList<>();
+                    System.out.println("-------------------------------------------------");
+                    Iterator<Cliente> i = cl1.iterator();
+                    while (i.hasNext()) {
+                        Cliente c = i.next();
+                        System.out.println(c.toString());
+                    }
+                    System.out.println("-------------------------------------------------");
                     break;
                 case 4:
                     

@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 
 public class Mant_inventario {
-    Menu men = new Menu();
+   /* Menu men = new Menu();
     
     /*public void inventariobase() {
         
@@ -25,7 +25,7 @@ public class Mant_inventario {
         Inventario.add(new Articulos(1009,"Botines",28,22990));
         Inventario.add(new Articulos(1010,"Tennis",45,24560));
     }*/
-    public void funcion(){
+    /*public void funcion(){
         int opcion=-1;
         Scanner teclado= new Scanner(System.in);
         Scanner teclado1= new Scanner(System.in);
@@ -114,6 +114,6 @@ public class Mant_inventario {
         } while (opcion !=0);
     }
     public void Inventario(){
-    }
+    }*/
 }
 
