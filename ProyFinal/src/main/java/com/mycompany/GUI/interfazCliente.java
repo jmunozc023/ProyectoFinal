@@ -47,7 +47,7 @@ public class interfazCliente extends javax.swing.JFrame {
         editar = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
 
-        datosCliente.setBounds(new java.awt.Rectangle(100, 100, 250, 250));
+        datosCliente.setBounds(new java.awt.Rectangle(100, 100, 260, 280));
 
         titJdiag.setText("Ingrese los datos del cliente");
 
@@ -59,6 +59,7 @@ public class interfazCliente extends javax.swing.JFrame {
 
         titemClidiag.setText("Email del cliente");
 
+        diagagreCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Add.png"))); // NOI18N
         diagagreCli.setText("Agregar");
 
         javax.swing.GroupLayout datosClienteLayout = new javax.swing.GroupLayout(datosCliente.getContentPane());
@@ -90,11 +91,11 @@ public class interfazCliente extends javax.swing.JFrame {
                                     .addComponent(titnumTelClidiag)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(txtfieldnumTelClidiag, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, datosClienteLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(diagagreCli)
-                .addGap(77, 77, 77))
+                .addGap(61, 61, 61))
         );
         datosClienteLayout.setVerticalGroup(
             datosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,12 +118,12 @@ public class interfazCliente extends javax.swing.JFrame {
                 .addGroup(datosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtfieldemClidiag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(titemClidiag))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(diagagreCli)
-                .addContainerGap())
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
-        datosClientemod.setBounds(new java.awt.Rectangle(100, 200, 230, 250));
+        datosClientemod.setBounds(new java.awt.Rectangle(100, 200, 260, 280));
 
         titJdiag1.setText("Ingrese los datos del cliente");
 
@@ -134,6 +135,7 @@ public class interfazCliente extends javax.swing.JFrame {
 
         titemClidiag1.setText("Email del cliente");
 
+        diagagreCli1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Add.png"))); // NOI18N
         diagagreCli1.setText("Agregar");
 
         javax.swing.GroupLayout datosClientemodLayout = new javax.swing.GroupLayout(datosClientemod.getContentPane());
@@ -165,11 +167,11 @@ public class interfazCliente extends javax.swing.JFrame {
                                     .addComponent(titnumTelClidiag1)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(txtfieldnumTelClidiag1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, datosClientemodLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(diagagreCli1)
-                .addGap(77, 77, 77))
+                .addGap(66, 66, 66))
         );
         datosClientemodLayout.setVerticalGroup(
             datosClientemodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,9 +194,9 @@ public class interfazCliente extends javax.swing.JFrame {
                 .addGroup(datosClientemodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtfieldemClidiag1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(titemClidiag1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(diagagreCli1)
-                .addContainerGap())
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -226,6 +228,7 @@ public class interfazCliente extends javax.swing.JFrame {
         Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Titulo.setText("Menú de Mantenimiento de clientes");
 
+        agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Add.png"))); // NOI18N
         agregar.setText("Agregar");
         agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,6 +236,7 @@ public class interfazCliente extends javax.swing.JFrame {
             }
         });
 
+        editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Edit.png"))); // NOI18N
         editar.setText("Editar");
         editar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -240,6 +244,7 @@ public class interfazCliente extends javax.swing.JFrame {
             }
         });
 
+        eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Remove.png"))); // NOI18N
         eliminar.setText("Eliminar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -247,7 +252,7 @@ public class interfazCliente extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(277, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(agregar)
@@ -256,13 +261,13 @@ public class interfazCliente extends javax.swing.JFrame {
                         .addGap(65, 65, 65))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(eliminar)
-                            .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(367, 367, 367))))
+                            .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
             .addGroup(layout.createSequentialGroup()
                 .addGap(266, 266, 266)
                 .addComponent(Titulo)
-                .addGap(0, 271, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
