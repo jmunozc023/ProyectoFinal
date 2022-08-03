@@ -6,7 +6,10 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Scanner;
 
+import com.mycompany.GUI.interfazCliente;
+
 public class Funciones {
+        interfazCliente inter = new interfazCliente();
         int opcion=-1;
         Scanner teclado= new Scanner(System.in);
         Scanner teclado1= new Scanner(System.in);
@@ -40,6 +43,7 @@ public class Funciones {
             opcion = teclado.nextInt();
             switch (opcion) {
                 case 1:
+                  
                     System.out.print("Ingrese el numero de Cliente: ");
                     int clnum= teclado.nextInt();
                     System.out.print("Ingrese el nombre del Cliente: ");
