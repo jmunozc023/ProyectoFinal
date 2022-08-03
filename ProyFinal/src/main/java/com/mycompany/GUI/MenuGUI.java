@@ -1,18 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.GUI;
 
-/**
- *
- * @author josep
- */
 public class MenuGUI extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuGUI
-     */
+    interfazCliente incli=new interfazCliente();
     public MenuGUI() {
         initComponents();
     }
@@ -27,31 +17,88 @@ public class MenuGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         mantClientesGUI = new javax.swing.JButton();
+        mantInvGUI = new javax.swing.JButton();
+        facturacionGUI = new javax.swing.JButton();
+        cierreCajaGUI = new javax.swing.JButton();
+        salirGUI = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        mantClientesGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/GUI/Iconos/addemployee.png"))); // NOI18N
+        mantClientesGUI.setIcon(new javax.swing.ImageIcon("F:\\FundProg\\ProyectoFinal\\ProyFinal\\src\\main\\resources\\Cliente.png")); // NOI18N
         mantClientesGUI.setText("Mant.Clientes");
+        mantClientesGUI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mantClientesGUIActionPerformed(evt);
+            }
+        });
+
+        mantInvGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Inventario.png"))); // NOI18N
+        mantInvGUI.setText("Mant.Inventario");
+
+        facturacionGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Facturacion.png"))); // NOI18N
+        facturacionGUI.setText("Facturacion");
+
+        cierreCajaGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Cierrecaja.png"))); // NOI18N
+        cierreCajaGUI.setText("Cierre de caja");
+
+        salirGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Salir.png"))); // NOI18N
+        salirGUI.setText("Salir");
+        salirGUI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirGUIActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(mantClientesGUI)
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(mantClientesGUI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(mantInvGUI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(114, 114, 114)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(facturacionGUI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cierreCajaGUI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(248, 248, 248)
+                        .addComponent(salirGUI)))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(60, 60, 60)
-                .addComponent(mantClientesGUI)
-                .addContainerGap(198, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mantClientesGUI)
+                    .addComponent(facturacionGUI))
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cierreCajaGUI)
+                    .addComponent(mantInvGUI))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(salirGUI)
+                .addGap(40, 40, 40))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void salirGUIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirGUIActionPerformed
+        if (evt.getSource()== salirGUI) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_salirGUIActionPerformed
+
+    private void mantClientesGUIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantClientesGUIActionPerformed
+        if (evt.getSource()== mantClientesGUI) {
+            incli.setVisible(true);
+        }
+    }//GEN-LAST:event_mantClientesGUIActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,6 +136,10 @@ public class MenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cierreCajaGUI;
+    private javax.swing.JButton facturacionGUI;
     private javax.swing.JButton mantClientesGUI;
+    private javax.swing.JButton mantInvGUI;
+    private javax.swing.JButton salirGUI;
     // End of variables declaration//GEN-END:variables
 }

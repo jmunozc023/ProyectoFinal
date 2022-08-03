@@ -23,10 +23,26 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-              <Component id="mantClientesGUI" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="208" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="58" pref="58" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="mantClientesGUI" max="32767" attributes="0"/>
+                          <Component id="mantInvGUI" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="114" pref="114" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="facturacionGUI" max="32767" attributes="0"/>
+                          <Component id="cierreCajaGUI" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="248" max="-2" attributes="0"/>
+                      <Component id="salirGUI" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="60" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -34,8 +50,18 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-              <Component id="mantClientesGUI" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="198" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="mantClientesGUI" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="facturacionGUI" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cierreCajaGUI" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="mantInvGUI" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="53" max="32767" attributes="0"/>
+              <Component id="salirGUI" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -44,10 +70,48 @@
     <Component class="javax.swing.JButton" name="mantClientesGUI">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/mycompany/GUI/Iconos/addemployee.png"/>
+          <Image iconType="2" name="F:\FundProg\ProyectoFinal\ProyFinal\src\main\resources\Cliente.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Mant.Clientes"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mantClientesGUIActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="mantInvGUI">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Inventario.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Mant.Inventario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="facturacionGUI">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Facturacion.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Facturacion"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="cierreCajaGUI">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Cierrecaja.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Cierre de caja"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="salirGUI">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Salir.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Salir"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salirGUIActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

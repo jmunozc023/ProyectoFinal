@@ -47,7 +47,7 @@ public class interfazCliente extends javax.swing.JFrame {
         editar = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
 
-        datosCliente.setBounds(new java.awt.Rectangle(100, 100, 230, 250));
+        datosCliente.setBounds(new java.awt.Rectangle(100, 100, 250, 250));
 
         titJdiag.setText("Ingrese los datos del cliente");
 
@@ -197,7 +197,7 @@ public class interfazCliente extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Facturación Tienda Nordic Style");
         setBackground(new java.awt.Color(102, 102, 102));
 
