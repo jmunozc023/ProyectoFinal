@@ -7,9 +7,21 @@ import java.util.ListIterator;
 import java.util.Scanner;
 
 import com.mycompany.GUI.interfazCliente;
+import javax.swing.table.DefaultTableModel;
 
 public class Funciones {
         interfazCliente inter = new interfazCliente();
+        /*static DefaultTableModel datos;
+        public DefaultTableModel listaclientes() {
+            String[] column = {"N. Cliente", "Nombre", "N.Telefono", "Email"};
+            datos = new DefaultTableModel(null, column) {
+            @Override
+                public boolean isCellEditable(int row, int column) {
+                return false;
+                }
+            };
+            return datos;
+        }*/
         int opcion=-1;
         Scanner teclado= new Scanner(System.in);
         Scanner teclado1= new Scanner(System.in);

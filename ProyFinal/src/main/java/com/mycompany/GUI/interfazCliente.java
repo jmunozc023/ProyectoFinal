@@ -1,12 +1,18 @@
 package com.mycompany.GUI;
 
+import com.mycompany.proyfinal.Cliente;
 import javax.swing.JOptionPane;
 import com.mycompany.proyfinal.Funciones;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 public class interfazCliente extends javax.swing.JFrame {
-
+    
     public interfazCliente() {
         initComponents();
+        cargarClientes();
     }
 
     /**
@@ -20,8 +26,6 @@ public class interfazCliente extends javax.swing.JFrame {
 
         datosCliente = new javax.swing.JDialog();
         titJdiag = new javax.swing.JLabel();
-        titnumClidiag = new javax.swing.JLabel();
-        txtfieldNumCli = new javax.swing.JTextField();
         titnomClidiag = new javax.swing.JLabel();
         txtfieldNomCli = new javax.swing.JTextField();
         titnumTelClidiag = new javax.swing.JLabel();
@@ -51,8 +55,6 @@ public class interfazCliente extends javax.swing.JFrame {
 
         titJdiag.setText("Ingrese los datos del cliente");
 
-        titnumClidiag.setText("Número de cliente");
-
         titnomClidiag.setText("Nombre del cliente");
 
         titnumTelClidiag.setText("Número telefónico");
@@ -61,6 +63,11 @@ public class interfazCliente extends javax.swing.JFrame {
 
         diagagreCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Add.png"))); // NOI18N
         diagagreCli.setText("Agregar");
+        diagagreCli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                diagagreCliActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout datosClienteLayout = new javax.swing.GroupLayout(datosCliente.getContentPane());
         datosCliente.getContentPane().setLayout(datosClienteLayout);
@@ -78,10 +85,6 @@ public class interfazCliente extends javax.swing.JFrame {
                                 .addComponent(titnomClidiag)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtfieldNomCli, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(datosClienteLayout.createSequentialGroup()
-                                .addComponent(titnumClidiag)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtfieldNumCli, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(datosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(datosClienteLayout.createSequentialGroup()
                                     .addComponent(titemClidiag)
@@ -102,11 +105,7 @@ public class interfazCliente extends javax.swing.JFrame {
             .addGroup(datosClienteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(titJdiag)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(datosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtfieldNumCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(titnumClidiag))
-                .addGap(18, 18, 18)
+                .addGap(32, 32, 32)
                 .addGroup(datosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtfieldNomCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(titnomClidiag))
@@ -118,7 +117,7 @@ public class interfazCliente extends javax.swing.JFrame {
                 .addGroup(datosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtfieldemClidiag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(titemClidiag))
-                .addGap(18, 18, 18)
+                .addGap(35, 35, 35)
                 .addComponent(diagagreCli)
                 .addContainerGap(54, Short.MAX_VALUE))
         );
@@ -208,18 +207,9 @@ public class interfazCliente extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Numero de cliente", "Nombre de cliente", "Numero Telefónico", "Email"
+                "Num. Cliente", "Nombre", "Num. Telefono", "Email"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tablaClientes.setColumnSelectionAllowed(true);
+        ));
         tablaClientes.getTableHeader().setReorderingAllowed(false);
         scrollClientes.setViewportView(tablaClientes);
         tablaClientes.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -246,6 +236,11 @@ public class interfazCliente extends javax.swing.JFrame {
 
         eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Remove.png"))); // NOI18N
         eliminar.setText("Eliminar");
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -303,39 +298,45 @@ public class interfazCliente extends javax.swing.JFrame {
             datosClientemod.setVisible(true);
     }//GEN-LAST:event_editarActionPerformed
 
+    private void diagagreCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diagagreCliActionPerformed
+        // TODO add your handling code here:
+        Cliente1 cliente1 = new Cliente1();
+        cliente1.setClnombre(txtfieldNomCli.getText());
+        cliente1.setClnumeroTel(txtfieldnumTelClidiag.getText());
+        cliente1.setClemail(txtfieldemClidiag.getText());
+        cliente1.setClnumero(00+Main.cl.size());
+        
+        Main.cl.add(cliente1);
+        JOptionPane.showMessageDialog(this, "Cliente ingresado exitosamente con el numero: 00"+ cliente1.getClnumero());
+        txtfieldNomCli.setText("");
+        txtfieldnumTelClidiag.setText("");
+        txtfieldemClidiag.setText("");
+        cargarClientes();
+    }//GEN-LAST:event_diagagreCliActionPerformed
+
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+        int eliminarFila=tablaClientes.getSelectedRow();
+        if (eliminarFila>=0) {
+            Main.cl.remove(eliminarFila);
+            cargarClientes();
+        } 
+    }//GEN-LAST:event_eliminarActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(interfazCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(interfazCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(interfazCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(interfazCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    private void cargarClientes(){
+        DefaultTableModel modelo = new DefaultTableModel(new String[]{"Num. Cliente", "Nombre", "Num. Telefono", "Email"}, Main.cl.size());
+        tablaClientes.setModel(modelo);
+        
+        TableModel modeloDatos= tablaClientes.getModel();
+        for (int i = 0; i < Main.cl.size(); i++) {
+            Cliente1 cliente1=Main.cl.get(i);
+            modeloDatos.setValueAt(cliente1.getClnumero(), i, 0);
+            modeloDatos.setValueAt(cliente1.getClnombre(), i, 1);
+            modeloDatos.setValueAt(cliente1.getClnumeroTel(), i, 2);
+            modeloDatos.setValueAt(cliente1.getClemail(), i, 3);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new interfazCliente().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -355,13 +356,11 @@ public class interfazCliente extends javax.swing.JFrame {
     private javax.swing.JLabel titemClidiag1;
     private javax.swing.JLabel titnomClidiag;
     private javax.swing.JLabel titnomClidiag1;
-    private javax.swing.JLabel titnumClidiag;
     private javax.swing.JLabel titnumClidiag1;
     private javax.swing.JLabel titnumTelClidiag;
     private javax.swing.JLabel titnumTelClidiag1;
     private javax.swing.JTextField txtfieldNomCli;
     private javax.swing.JTextField txtfieldNomCli1;
-    private javax.swing.JTextField txtfieldNumCli;
     private javax.swing.JTextField txtfieldNumCli1;
     private javax.swing.JTextField txtfieldemClidiag;
     private javax.swing.JTextField txtfieldemClidiag1;
