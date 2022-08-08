@@ -1,9 +1,7 @@
 package com.mycompany.GUI;
 
-import static com.mycompany.GUI.ProyFinal.cl;
 
 import javax.swing.JOptionPane;
-
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
@@ -47,7 +45,7 @@ public class interfazCliente extends javax.swing.JFrame {
         agregar = new javax.swing.JButton();
         editar = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
-        Salir = new javax.swing.JButton();
+        eliminar1 = new javax.swing.JButton();
 
         datosCliente.setBounds(new java.awt.Rectangle(100, 100, 260, 280));
 
@@ -174,7 +172,7 @@ public class interfazCliente extends javax.swing.JFrame {
             .addGroup(datosClientemodLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(titJdiag1)
-                .addGap(33, 33, 33)
+                .addGap(29, 29, 29)
                 .addGroup(datosClientemodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtfieldNomCli1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(titnomClidiag1))
@@ -186,7 +184,7 @@ public class interfazCliente extends javax.swing.JFrame {
                 .addGroup(datosClientemodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtfieldemClidiag1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(titemClidiag1))
-                .addGap(34, 34, 34)
+                .addGap(38, 38, 38)
                 .addComponent(diagagreCli1)
                 .addContainerGap(15, Short.MAX_VALUE))
         );
@@ -235,11 +233,11 @@ public class interfazCliente extends javax.swing.JFrame {
             }
         });
 
-        Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Salir2.png"))); // NOI18N
-        Salir.setText("Salir");
-        Salir.addActionListener(new java.awt.event.ActionListener() {
+        eliminar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Salir2.png"))); // NOI18N
+        eliminar1.setText("Salir");
+        eliminar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalirActionPerformed(evt);
+                eliminar1ActionPerformed(evt);
             }
         });
 
@@ -248,38 +246,41 @@ public class interfazCliente extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(agregar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(scrollClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(166, 166, 166)
-                .addComponent(Titulo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(agregar)
+                            .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(eliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(41, 41, 41)
+                        .addComponent(scrollClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(Titulo)))
+                .addGap(0, 48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(116, 116, 116)
-                .addComponent(agregar)
-                .addGap(18, 18, 18)
-                .addComponent(editar)
-                .addGap(18, 18, 18)
-                .addComponent(eliminar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Salir)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Titulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addComponent(scrollClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(agregar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(editar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(eliminar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(eliminar1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addComponent(scrollClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35))))
         );
 
         pack();
@@ -296,9 +297,9 @@ public class interfazCliente extends javax.swing.JFrame {
             datosClientemod.setVisible(true);
     }//GEN-LAST:event_editarActionPerformed
     public void clientesBase(){
-        cl.add(new Cliente(0, "Jose Muñoz", "87026720", "jmunozc023@ulacit.ed.cr"));
-        cl.add(new Cliente(1, "Diana Rodriguez", "72845478", "drodriguezs298@ulacit.ed.cr"));
-        cl.add(new Cliente(2, "Julliam Salazar", "57124752", "jsalazarg423@ulacit.ed.cr"));
+        Main.cl.add(new Cliente(0, "Jose Muñoz", "87026720", "jmunozc023@ulacit.ed.cr"));
+        Main.cl.add(new Cliente(1, "Diana Rodriguez", "72845478", "drodriguezs298@ulacit.ed.cr"));
+        Main.cl.add(new Cliente(2, "Julliam Salazar", "57124752", "jsalazarg423@ulacit.ed.cr"));
         cargarClientes();
     }
     private void diagagreCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diagagreCliActionPerformed
@@ -307,8 +308,9 @@ public class interfazCliente extends javax.swing.JFrame {
         cliente1.setClnombre(txtfieldNomCli.getText());
         cliente1.setClnumeroTel(txtfieldnumTelClidiag.getText());
         cliente1.setClemail(txtfieldemClidiag.getText());
-        cliente1.setClnumero(ProyFinal.cl.size());
-       ProyFinal.cl.add(cliente1);
+        cliente1.setClnumero(00+Main.cl.size());
+        
+        Main.cl.add(cliente1);
         JOptionPane.showMessageDialog(this, "Cliente ingresado exitosamente con el numero: 00"+ cliente1.getClnumero());
         txtfieldNomCli.setText("");
         txtfieldnumTelClidiag.setText("");
@@ -318,20 +320,21 @@ public class interfazCliente extends javax.swing.JFrame {
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
         int eliminarFila=tablaClientes.getSelectedRow();
-        if (eliminarFila>=0)ProyFinal.cl.remove(eliminarFila);
+        if (eliminarFila>=0) {
+            Main.cl.remove(eliminarFila);
             cargarClientes();
         } 
     }//GEN-LAST:event_eliminarActionPerformed
 
     private void diagagreCli1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diagagreCli1ActionPerformed
-        Cliente1 clientemod = new Cliente1();
+       Cliente clientemod = new Cliente();
         int modificarFila=tablaClientes.getSelectedRow();
         if (modificarFila>=0) {
             clientemod.setClnombre(txtfieldNomCli1.getText());
             clientemod.setClnumeroTel(txtfieldnumTelClidiag1.getText());
             clientemod.setClemail(txtfieldemClidiag1.getText());
-            clientemod.setClnumero(00+ProyFinal.size());
-            ProyFinal.cl.set(modificarFila, clientemod);
+            clientemod.setClnumero(00+Main.cl.size());
+            Main.cl.set(modificarFila, clientemod);
             cargarClientes();
         } 
         JOptionPane.showMessageDialog(this, "Cliente modificado exitosamente con el numero: 00"+ clientemod.getClnumero());
@@ -341,20 +344,20 @@ public class interfazCliente extends javax.swing.JFrame {
         cargarClientes();
     }//GEN-LAST:event_diagagreCli1ActionPerformed
 
-    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-       this.dispose();
-    }//GEN-LAST:event_SalirActionPerformed
+    private void eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminar1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_eliminar1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     private void cargarClientes(){
-        DefaultTableModel modelo = new DefaultTableModel(new String[]{"Num. Cliente", "NombreProyFinalNum. Telefono", "Email"}, ProyFinal.cl.size());
+        DefaultTableModel modelo = new DefaultTableModel(new String[]{"Num. Cliente", "Nombre", "Num. Telefono", "Email"}, Main.cl.size());
         tablaClientes.setModel(modelo);
         
-        TableModel modeloDatos= tablaClientes.getMoProyFinal);
-        for (int i = 0; i < ProyFinal.cl.size(ProyFinal++) {
-            Cliente cliente1=ProyFinal.cl.get(i);
+        TableModel modeloDatos= tablaClientes.getModel();
+        for (int i = 0; i < Main.cl.size(); i++) {
+            Cliente cliente1=Main.cl.get(i);
             modeloDatos.setValueAt(cliente1.getClnumero(), i, 0);
             modeloDatos.setValueAt(cliente1.getClnombre(), i, 1);
             modeloDatos.setValueAt(cliente1.getClnumeroTel(), i, 2);
@@ -363,7 +366,6 @@ public class interfazCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Salir;
     private javax.swing.JLabel Titulo;
     private javax.swing.JButton agregar;
     private javax.swing.JDialog datosCliente;
@@ -372,6 +374,7 @@ public class interfazCliente extends javax.swing.JFrame {
     private javax.swing.JButton diagagreCli1;
     private javax.swing.JButton editar;
     private javax.swing.JButton eliminar;
+    private javax.swing.JButton eliminar1;
     private javax.swing.JScrollPane scrollClientes;
     private javax.swing.JTable tablaClientes;
     private javax.swing.JLabel titJdiag;
