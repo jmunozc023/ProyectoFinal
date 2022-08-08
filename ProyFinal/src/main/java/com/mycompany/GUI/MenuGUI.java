@@ -24,7 +24,7 @@ public class MenuGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        mantClientesGUI.setIcon(new javax.swing.ImageIcon("F:\\FundProg\\ProyectoFinal\\ProyFinal\\src\\main\\resources\\Cliente.png")); // NOI18N
+        mantClientesGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Cliente.png"))); // NOI18N
         mantClientesGUI.setText("Mant.Clientes");
         mantClientesGUI.setFocusPainted(false);
         mantClientesGUI.addActionListener(new java.awt.event.ActionListener() {

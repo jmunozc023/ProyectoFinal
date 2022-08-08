@@ -70,7 +70,7 @@
     <Component class="javax.swing.JButton" name="mantClientesGUI">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="F:\FundProg\ProyectoFinal\ProyFinal\src\main\resources\Cliente.png"/>
+          <Image iconType="3" name="/Cliente.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Mant.Clientes"/>
         <Property name="focusPainted" type="boolean" value="false"/>
