@@ -1,6 +1,6 @@
 package com.mycompany.proyfinal;
 
-import com.mycompany.GUI.MenuGUI;
+import com.mycompany.GUI.Main;
 
 
 public class ProyFinal {
@@ -11,8 +11,6 @@ public class ProyFinal {
     }
     //El main solo debe tener la llamada del contructor para el menu. Todo lo demas se hace en clases aparte.
     public static void main(String[] args) {
-        Menu men =new Menu();
-        men.opciones();
-        new MenuGUI().setVisible(true);
+        Main.main(args);
     }
 }
