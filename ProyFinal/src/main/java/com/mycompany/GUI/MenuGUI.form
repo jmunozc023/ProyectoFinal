@@ -73,6 +73,7 @@
           <Image iconType="2" name="F:\FundProg\ProyectoFinal\ProyFinal\src\main\resources\Cliente.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Mant.Clientes"/>
+        <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mantClientesGUIActionPerformed"/>
@@ -84,6 +85,7 @@
           <Image iconType="3" name="/Inventario.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Mant.Inventario"/>
+        <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="facturacionGUI">
@@ -92,6 +94,7 @@
           <Image iconType="3" name="/Facturacion.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Facturacion"/>
+        <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="cierreCajaGUI">
@@ -100,6 +103,7 @@
           <Image iconType="3" name="/Cierrecaja.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cierre de caja"/>
+        <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="salirGUI">
@@ -108,6 +112,7 @@
           <Image iconType="3" name="/Salir.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Salir"/>
+        <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salirGUIActionPerformed"/>

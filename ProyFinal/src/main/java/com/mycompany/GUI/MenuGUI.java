@@ -26,6 +26,7 @@ public class MenuGUI extends javax.swing.JFrame {
 
         mantClientesGUI.setIcon(new javax.swing.ImageIcon("F:\\FundProg\\ProyectoFinal\\ProyFinal\\src\\main\\resources\\Cliente.png")); // NOI18N
         mantClientesGUI.setText("Mant.Clientes");
+        mantClientesGUI.setFocusPainted(false);
         mantClientesGUI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mantClientesGUIActionPerformed(evt);
@@ -34,15 +35,19 @@ public class MenuGUI extends javax.swing.JFrame {
 
         mantInvGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Inventario.png"))); // NOI18N
         mantInvGUI.setText("Mant.Inventario");
+        mantInvGUI.setFocusPainted(false);
 
         facturacionGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Facturacion.png"))); // NOI18N
         facturacionGUI.setText("Facturacion");
+        facturacionGUI.setFocusPainted(false);
 
         cierreCajaGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Cierrecaja.png"))); // NOI18N
         cierreCajaGUI.setText("Cierre de caja");
+        cierreCajaGUI.setFocusPainted(false);
 
         salirGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Salir.png"))); // NOI18N
         salirGUI.setText("Salir");
+        salirGUI.setFocusPainted(false);
         salirGUI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salirGUIActionPerformed(evt);
