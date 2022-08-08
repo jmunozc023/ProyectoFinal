@@ -16,6 +16,8 @@ public class Main {
     
     public static void main(String[] args) {
         cl =new ArrayList<>();
+        interfazCliente infaCli = new interfazCliente();
+        infaCli.clientesBase();
         MenuGUI principal =new MenuGUI ();
         principal.setVisible(true);
         

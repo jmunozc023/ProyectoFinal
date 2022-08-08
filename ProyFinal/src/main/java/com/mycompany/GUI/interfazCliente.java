@@ -1,5 +1,6 @@
 package com.mycompany.GUI;
 
+import static com.mycompany.GUI.Main.cl;
 import com.mycompany.proyfinal.Cliente;
 import javax.swing.JOptionPane;
 import com.mycompany.proyfinal.Funciones;
@@ -297,7 +298,12 @@ public class interfazCliente extends javax.swing.JFrame {
         if (evt.getSource()== editar)
             datosClientemod.setVisible(true);
     }//GEN-LAST:event_editarActionPerformed
-
+    public void clientesBase(){
+        cl.add(new Cliente1(0, "Jose Muñoz", "87026720", "jmunozc023@ulacit.ed.cr"));
+        cl.add(new Cliente1(1, "Diana Rodriguez", "72845478", "drodriguezs298@ulacit.ed.cr"));
+        cl.add(new Cliente1(2, "Julliam Salazar", "57124752", "jsalazarg423@ulacit.ed.cr"));
+        cargarClientes();
+    }
     private void diagagreCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diagagreCliActionPerformed
         // TODO add your handling code here:
         Cliente1 cliente1 = new Cliente1();
