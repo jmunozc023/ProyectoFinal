@@ -1,5 +1,7 @@
 package com.mycompany.proyfinal;
 
+import com.mycompany.GUI.MenuGUI;
+
 
 public class ProyFinal {
     
@@ -11,6 +13,6 @@ public class ProyFinal {
     public static void main(String[] args) {
         Menu men =new Menu();
         men.opciones();
-        
+        new MenuGUI().setVisible(true);
     }
 }
