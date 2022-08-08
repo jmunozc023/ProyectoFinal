@@ -1,9 +1,8 @@
 package com.mycompany.GUI;
-//Clase para crear el objeto de Cliente1
+//Clase para crear el objeto de Cliente
 
-import com.mycompany.proyfinal.*;
-//Clase para crear el objeto de Cliente1
-public class Cliente1 {
+//Clase para crear el objeto de Cliente
+public class Cliente {
     int clnumero;
     String clnombre;
     String clnumeroTel;
@@ -13,14 +12,14 @@ public class Cliente1 {
     int getClnumeroTel;
     String getClemail;
     
-    public Cliente1(int clnumero, String clnombre, String clnumeroTel, String clemail) {
+    public Cliente(int clnumero, String clnombre, String clnumeroTel, String clemail) {
         this.clnumero = clnumero;
         this.clnombre = clnombre;
         this.clnumeroTel = clnumeroTel;
         this.clemail = clemail;
     }
 
-    Cliente1() {
+    Cliente() {
         
         
     }

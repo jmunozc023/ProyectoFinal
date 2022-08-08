@@ -1,11 +1,9 @@
 package com.mycompany.GUI;
 
-import static com.mycompany.GUI.Main.cl;
-import com.mycompany.proyfinal.Cliente;
+import static com.mycompany.GUI.ProyFinal.cl;
+
 import javax.swing.JOptionPane;
-import com.mycompany.proyfinal.Funciones;
-import java.util.ArrayList;
-import java.util.List;
+
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
@@ -49,6 +47,7 @@ public class interfazCliente extends javax.swing.JFrame {
         agregar = new javax.swing.JButton();
         editar = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
+        Salir = new javax.swing.JButton();
 
         datosCliente.setBounds(new java.awt.Rectangle(100, 100, 260, 280));
 
@@ -236,46 +235,51 @@ public class interfazCliente extends javax.swing.JFrame {
             }
         });
 
+        Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Salir2.png"))); // NOI18N
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(277, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(agregar)
-                        .addGap(42, 42, 42)
-                        .addComponent(scrollClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
+                    .addComponent(agregar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(scrollClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
             .addGroup(layout.createSequentialGroup()
-                .addGap(266, 266, 266)
+                .addGap(166, 166, 166)
                 .addComponent(Titulo)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addComponent(agregar)
+                .addGap(18, 18, 18)
+                .addComponent(editar)
+                .addGap(18, 18, 18)
+                .addComponent(eliminar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Salir)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Titulo)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(agregar)
-                        .addGap(75, 75, 75)
-                        .addComponent(editar)
-                        .addGap(75, 75, 75)
-                        .addComponent(eliminar)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                        .addComponent(scrollClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(scrollClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
         );
 
         pack();
@@ -292,20 +296,19 @@ public class interfazCliente extends javax.swing.JFrame {
             datosClientemod.setVisible(true);
     }//GEN-LAST:event_editarActionPerformed
     public void clientesBase(){
-        cl.add(new Cliente1(0, "Jose Muñoz", "87026720", "jmunozc023@ulacit.ed.cr"));
-        cl.add(new Cliente1(1, "Diana Rodriguez", "72845478", "drodriguezs298@ulacit.ed.cr"));
-        cl.add(new Cliente1(2, "Julliam Salazar", "57124752", "jsalazarg423@ulacit.ed.cr"));
+        cl.add(new Cliente(0, "Jose Muñoz", "87026720", "jmunozc023@ulacit.ed.cr"));
+        cl.add(new Cliente(1, "Diana Rodriguez", "72845478", "drodriguezs298@ulacit.ed.cr"));
+        cl.add(new Cliente(2, "Julliam Salazar", "57124752", "jsalazarg423@ulacit.ed.cr"));
         cargarClientes();
     }
     private void diagagreCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diagagreCliActionPerformed
         // TODO add your handling code here:
-        Cliente1 cliente1 = new Cliente1();
+        Cliente cliente1 = new Cliente();
         cliente1.setClnombre(txtfieldNomCli.getText());
         cliente1.setClnumeroTel(txtfieldnumTelClidiag.getText());
         cliente1.setClemail(txtfieldemClidiag.getText());
-        cliente1.setClnumero(00+Main.cl.size());
-        
-        Main.cl.add(cliente1);
+        cliente1.setClnumero(ProyFinal.cl.size());
+       ProyFinal.cl.add(cliente1);
         JOptionPane.showMessageDialog(this, "Cliente ingresado exitosamente con el numero: 00"+ cliente1.getClnumero());
         txtfieldNomCli.setText("");
         txtfieldnumTelClidiag.setText("");
@@ -315,8 +318,7 @@ public class interfazCliente extends javax.swing.JFrame {
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
         int eliminarFila=tablaClientes.getSelectedRow();
-        if (eliminarFila>=0) {
-            Main.cl.remove(eliminarFila);
+        if (eliminarFila>=0)ProyFinal.cl.remove(eliminarFila);
             cargarClientes();
         } 
     }//GEN-LAST:event_eliminarActionPerformed
@@ -328,8 +330,8 @@ public class interfazCliente extends javax.swing.JFrame {
             clientemod.setClnombre(txtfieldNomCli1.getText());
             clientemod.setClnumeroTel(txtfieldnumTelClidiag1.getText());
             clientemod.setClemail(txtfieldemClidiag1.getText());
-            clientemod.setClnumero(00+Main.cl.size());
-            Main.cl.set(modificarFila, clientemod);
+            clientemod.setClnumero(00+ProyFinal.size());
+            ProyFinal.cl.set(modificarFila, clientemod);
             cargarClientes();
         } 
         JOptionPane.showMessageDialog(this, "Cliente modificado exitosamente con el numero: 00"+ clientemod.getClnumero());
@@ -339,16 +341,20 @@ public class interfazCliente extends javax.swing.JFrame {
         cargarClientes();
     }//GEN-LAST:event_diagagreCli1ActionPerformed
 
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+       this.dispose();
+    }//GEN-LAST:event_SalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
     private void cargarClientes(){
-        DefaultTableModel modelo = new DefaultTableModel(new String[]{"Num. Cliente", "Nombre", "Num. Telefono", "Email"}, Main.cl.size());
+        DefaultTableModel modelo = new DefaultTableModel(new String[]{"Num. Cliente", "NombreProyFinalNum. Telefono", "Email"}, ProyFinal.cl.size());
         tablaClientes.setModel(modelo);
         
-        TableModel modeloDatos= tablaClientes.getModel();
-        for (int i = 0; i < Main.cl.size(); i++) {
-            Cliente1 cliente1=Main.cl.get(i);
+        TableModel modeloDatos= tablaClientes.getMoProyFinal);
+        for (int i = 0; i < ProyFinal.cl.size(ProyFinal++) {
+            Cliente cliente1=ProyFinal.cl.get(i);
             modeloDatos.setValueAt(cliente1.getClnumero(), i, 0);
             modeloDatos.setValueAt(cliente1.getClnombre(), i, 1);
             modeloDatos.setValueAt(cliente1.getClnumeroTel(), i, 2);
@@ -357,6 +363,7 @@ public class interfazCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Salir;
     private javax.swing.JLabel Titulo;
     private javax.swing.JButton agregar;
     private javax.swing.JDialog datosCliente;

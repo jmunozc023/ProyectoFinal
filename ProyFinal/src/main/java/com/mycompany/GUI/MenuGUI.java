@@ -21,8 +21,15 @@ public class MenuGUI extends javax.swing.JFrame {
         facturacionGUI = new javax.swing.JButton();
         cierreCajaGUI = new javax.swing.JButton();
         salirGUI = new javax.swing.JButton();
+        tituloMenu = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        tituloAut = new javax.swing.JLabel();
+        Josename = new javax.swing.JLabel();
+        Diananame = new javax.swing.JLabel();
+        Julliamname = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Facturación Tienda Nordic Style");
 
         mantClientesGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Cliente.png"))); // NOI18N
         mantClientesGUI.setText("Mant.Clientes");
@@ -54,14 +61,54 @@ public class MenuGUI extends javax.swing.JFrame {
             }
         });
 
+        tituloMenu.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 3, 24)); // NOI18N
+        tituloMenu.setText("Programa de Facturación Tienda Nordic Style");
+
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        tituloAut.setText("Creado por:");
+
+        Josename.setText("Jose Pablo Muñoz Carvajal");
+
+        Diananame.setText("Diana Rodriguez Sole");
+
+        Julliamname.setText("Julliam Salazar Garcia");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tituloAut)
+                    .addComponent(Josename)
+                    .addComponent(Diananame)
+                    .addComponent(Julliamname))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tituloAut)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Josename)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Diananame)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Julliamname)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(58, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(mantClientesGUI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(mantInvGUI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -70,24 +117,33 @@ public class MenuGUI extends javax.swing.JFrame {
                             .addComponent(facturacionGUI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cierreCajaGUI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(248, 248, 248)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(salirGUI)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGap(65, 65, 65))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(96, 96, 96)
+                .addComponent(tituloMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addGap(27, 27, 27)
+                .addComponent(tituloMenu)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(mantClientesGUI)
                     .addComponent(facturacionGUI))
-                .addGap(60, 60, 60)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cierreCajaGUI)
                     .addComponent(mantInvGUI))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addComponent(salirGUI)
-                .addGap(40, 40, 40))
+                .addGap(66, 66, 66)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(salirGUI))
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -111,10 +167,16 @@ public class MenuGUI extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Diananame;
+    private javax.swing.JLabel Josename;
+    private javax.swing.JLabel Julliamname;
     private javax.swing.JButton cierreCajaGUI;
     private javax.swing.JButton facturacionGUI;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton mantClientesGUI;
     private javax.swing.JButton mantInvGUI;
     private javax.swing.JButton salirGUI;
+    private javax.swing.JLabel tituloAut;
+    private javax.swing.JLabel tituloMenu;
     // End of variables declaration//GEN-END:variables
 }

@@ -11,8 +11,8 @@ import java.util.ArrayList;
  *
  * @author josep
  */
-public class Main {
-    public static ArrayList<Cliente1> cl;
+public class ProyFinal {
+    public static ArrayList<Cliente> cl;
     
     public static void main(String[] args) {
         cl =new ArrayList<>();
