@@ -36,8 +36,6 @@ public class interfazCliente extends javax.swing.JFrame {
         diagagreCli = new javax.swing.JButton();
         datosClientemod = new javax.swing.JDialog();
         titJdiag1 = new javax.swing.JLabel();
-        titnumClidiag1 = new javax.swing.JLabel();
-        txtfieldNumCli1 = new javax.swing.JTextField();
         titnomClidiag1 = new javax.swing.JLabel();
         txtfieldNomCli1 = new javax.swing.JTextField();
         titnumTelClidiag1 = new javax.swing.JLabel();
@@ -127,8 +125,6 @@ public class interfazCliente extends javax.swing.JFrame {
 
         titJdiag1.setText("Ingrese los datos del cliente");
 
-        titnumClidiag1.setText("Número de cliente");
-
         titnomClidiag1.setText("Nombre del cliente");
 
         titnumTelClidiag1.setText("Número telefónico");
@@ -137,6 +133,11 @@ public class interfazCliente extends javax.swing.JFrame {
 
         diagagreCli1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Add.png"))); // NOI18N
         diagagreCli1.setText("Agregar");
+        diagagreCli1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                diagagreCli1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout datosClientemodLayout = new javax.swing.GroupLayout(datosClientemod.getContentPane());
         datosClientemod.getContentPane().setLayout(datosClientemodLayout);
@@ -154,10 +155,6 @@ public class interfazCliente extends javax.swing.JFrame {
                                 .addComponent(titnomClidiag1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtfieldNomCli1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(datosClientemodLayout.createSequentialGroup()
-                                .addComponent(titnumClidiag1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtfieldNumCli1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(datosClientemodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(datosClientemodLayout.createSequentialGroup()
                                     .addComponent(titemClidiag1)
@@ -178,11 +175,7 @@ public class interfazCliente extends javax.swing.JFrame {
             .addGroup(datosClientemodLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(titJdiag1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(datosClientemodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtfieldNumCli1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(titnumClidiag1))
-                .addGap(18, 18, 18)
+                .addGap(33, 33, 33)
                 .addGroup(datosClientemodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtfieldNomCli1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(titnomClidiag1))
@@ -194,7 +187,7 @@ public class interfazCliente extends javax.swing.JFrame {
                 .addGroup(datosClientemodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtfieldemClidiag1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(titemClidiag1))
-                .addGap(18, 18, 18)
+                .addGap(34, 34, 34)
                 .addComponent(diagagreCli1)
                 .addContainerGap(15, Short.MAX_VALUE))
         );
@@ -328,6 +321,24 @@ public class interfazCliente extends javax.swing.JFrame {
         } 
     }//GEN-LAST:event_eliminarActionPerformed
 
+    private void diagagreCli1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diagagreCli1ActionPerformed
+        Cliente1 clientemod = new Cliente1();
+        int modificarFila=tablaClientes.getSelectedRow();
+        if (modificarFila>=0) {
+            clientemod.setClnombre(txtfieldNomCli1.getText());
+            clientemod.setClnumeroTel(txtfieldnumTelClidiag1.getText());
+            clientemod.setClemail(txtfieldemClidiag1.getText());
+            clientemod.setClnumero(00+Main.cl.size());
+            Main.cl.set(modificarFila, clientemod);
+            cargarClientes();
+        } 
+        JOptionPane.showMessageDialog(this, "Cliente modificado exitosamente con el numero: 00"+ clientemod.getClnumero());
+        txtfieldNomCli1.setText("");
+        txtfieldnumTelClidiag1.setText("");
+        txtfieldemClidiag1.setText("");
+        cargarClientes();
+    }//GEN-LAST:event_diagagreCli1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -362,12 +373,10 @@ public class interfazCliente extends javax.swing.JFrame {
     private javax.swing.JLabel titemClidiag1;
     private javax.swing.JLabel titnomClidiag;
     private javax.swing.JLabel titnomClidiag1;
-    private javax.swing.JLabel titnumClidiag1;
     private javax.swing.JLabel titnumTelClidiag;
     private javax.swing.JLabel titnumTelClidiag1;
     private javax.swing.JTextField txtfieldNomCli;
     private javax.swing.JTextField txtfieldNomCli1;
-    private javax.swing.JTextField txtfieldNumCli1;
     private javax.swing.JTextField txtfieldemClidiag;
     private javax.swing.JTextField txtfieldemClidiag1;
     private javax.swing.JTextField txtfieldnumTelClidiag;

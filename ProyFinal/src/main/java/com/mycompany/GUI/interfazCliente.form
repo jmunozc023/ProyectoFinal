@@ -141,11 +141,6 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="txtfieldNomCli1" min="-2" pref="84" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="titnumClidiag1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtfieldNumCli1" min="-2" pref="84" max="-2" attributes="0"/>
-                              </Group>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="titemClidiag1" min="-2" max="-2" attributes="0"/>
@@ -175,12 +170,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="titJdiag1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtfieldNumCli1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="titnumClidiag1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtfieldNomCli1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="titnomClidiag1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -195,7 +185,7 @@
                       <Component id="txtfieldemClidiag1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="titemClidiag1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Component id="diagagreCli1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="15" max="32767" attributes="0"/>
               </Group>
@@ -207,13 +197,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Ingrese los datos del cliente"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="titnumClidiag1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="N&#xfa;mero de cliente"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtfieldNumCli1">
         </Component>
         <Component class="javax.swing.JLabel" name="titnomClidiag1">
           <Properties>
@@ -243,6 +226,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Agregar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="diagagreCli1ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
