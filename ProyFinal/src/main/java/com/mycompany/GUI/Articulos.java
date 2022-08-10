@@ -59,7 +59,7 @@ public class Articulos {
 
     @Override
     public String toString() {
-        return "Inventario " + "Posicion:" + posicion + ", Nombre:" + invNombre + ", Cantidad disponible:" + cantDisp + ", Precio:" + precio;
+        return  invNombre+" Cant. disponible: " +  cantDisp+" Prec. uni.: " + precio;
     }
 
 

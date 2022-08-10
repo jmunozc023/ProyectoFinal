@@ -12,7 +12,8 @@ public class interfazFacturacion extends javax.swing.JFrame {
     
     public interfazFacturacion() {
         initComponents();
-        relcombobox();
+        relcomboboxInv();
+        relcomboboxCli();
     }
 
     /**
@@ -67,7 +68,11 @@ public class interfazFacturacion extends javax.swing.JFrame {
 
         TitCliente.setText("Cliente");
 
-        SelInventario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        SelInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SelInventarioActionPerformed(evt);
+            }
+        });
 
         TitProd.setText("Producto");
 
@@ -75,7 +80,7 @@ public class interfazFacturacion extends javax.swing.JFrame {
 
         SelCant.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        refreshBoton.setText("Refrescar");
+        refreshBoton.setText("Actualizar");
         refreshBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshBotonActionPerformed(evt);
@@ -104,8 +109,8 @@ public class interfazFacturacion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(SelCliente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SelInventario, 0, 184, Short.MAX_VALUE)
-                    .addComponent(SelCant, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(SelInventario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SelCant, 0, 184, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(refreshBoton)
                 .addGap(99, 99, 99))
@@ -143,14 +148,19 @@ public class interfazFacturacion extends javax.swing.JFrame {
 
     private void refreshBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshBotonActionPerformed
         clearCombobox();
-        relcombobox();
+        relcomboboxInv();
+        relcomboboxCli();
     }//GEN-LAST:event_refreshBotonActionPerformed
+
+    private void SelInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelInventarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SelInventarioActionPerformed
     
     /**
      * @param cl
      * @param args the command line arguments
      */
-    private void relcombobox(){
+    private void relcomboboxCli(){
         
         for (int i = 0; i < Main.cl.size(); i++) {
             SelCliente.addItem(Main.cl.get(i).toString());
@@ -159,7 +169,15 @@ public class interfazFacturacion extends javax.swing.JFrame {
     private void clearCombobox(){
         
        SelCliente.removeAllItems();
+       SelInventario.removeAllItems();
     }
+    private void relcomboboxInv(){
+        
+        for (int i = 0; i < Main.inv.size(); i++) {
+            SelInventario.addItem(Main.inv.get(i).toString());
+        }
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> SelCant;
