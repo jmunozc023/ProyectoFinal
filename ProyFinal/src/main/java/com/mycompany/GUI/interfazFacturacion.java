@@ -34,7 +34,7 @@ public class interfazFacturacion extends javax.swing.JFrame {
         TitProd = new javax.swing.JLabel();
         titcant = new javax.swing.JLabel();
         SelCant = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
+        refreshBoton = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -75,10 +75,10 @@ public class interfazFacturacion extends javax.swing.JFrame {
 
         SelCant.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        refreshBoton.setText("Refrescar");
+        refreshBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                refreshBotonActionPerformed(evt);
             }
         });
 
@@ -107,7 +107,7 @@ public class interfazFacturacion extends javax.swing.JFrame {
                     .addComponent(SelInventario, 0, 184, Short.MAX_VALUE)
                     .addComponent(SelCant, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(refreshBoton)
                 .addGap(99, 99, 99))
         );
         layout.setVerticalGroup(
@@ -120,7 +120,7 @@ public class interfazFacturacion extends javax.swing.JFrame {
                     .addComponent(TitCliente)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(SelCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton2)))
+                        .addComponent(refreshBoton)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SelInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -141,10 +141,10 @@ public class interfazFacturacion extends javax.swing.JFrame {
        // TODO
     }//GEN-LAST:event_SelClienteActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void refreshBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshBotonActionPerformed
         clearCombobox();
         relcombobox();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_refreshBotonActionPerformed
     
     /**
      * @param cl
@@ -169,7 +169,7 @@ public class interfazFacturacion extends javax.swing.JFrame {
     private javax.swing.JLabel TitProd;
     private javax.swing.JLabel Titulo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton refreshBoton;
     private javax.swing.JScrollPane scrollfactura;
     private javax.swing.JTable tablaFacturacion;
     private javax.swing.JLabel titcant;
