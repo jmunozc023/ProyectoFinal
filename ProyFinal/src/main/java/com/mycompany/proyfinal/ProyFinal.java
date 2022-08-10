@@ -11,6 +11,7 @@ public class ProyFinal {
     }
     //El main solo debe tener la llamada del contructor para el menu. Todo lo demas se hace en clases aparte.
     public static void main(String[] args) {
-        Main.main(args);
+        Main mn =new Main();
+        mn.main(args);
     }
 }

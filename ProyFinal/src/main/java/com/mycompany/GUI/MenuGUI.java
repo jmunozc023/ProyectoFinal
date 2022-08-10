@@ -3,6 +3,7 @@ package com.mycompany.GUI;
 public class MenuGUI extends javax.swing.JFrame {
 
     interfazCliente incli=new interfazCliente();
+    interfazInventario ininv= new interfazInventario();
     public MenuGUI() {
         initComponents();
     }
@@ -43,6 +44,11 @@ public class MenuGUI extends javax.swing.JFrame {
         mantInvGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Inventario.png"))); // NOI18N
         mantInvGUI.setText("Mant.Inventario");
         mantInvGUI.setFocusPainted(false);
+        mantInvGUI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mantInvGUIActionPerformed(evt);
+            }
+        });
 
         facturacionGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Facturacion.png"))); // NOI18N
         facturacionGUI.setText("Facturacion");
@@ -160,6 +166,12 @@ public class MenuGUI extends javax.swing.JFrame {
             incli.setVisible(true);
         }
     }//GEN-LAST:event_mantClientesGUIActionPerformed
+
+    private void mantInvGUIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantInvGUIActionPerformed
+        if (evt.getSource()== mantInvGUI) {
+            ininv.setVisible(true);
+        }
+    }//GEN-LAST:event_mantInvGUIActionPerformed
 
     /**
      * @param args the command line arguments
