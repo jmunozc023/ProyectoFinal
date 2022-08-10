@@ -4,6 +4,7 @@ public class MenuGUI extends javax.swing.JFrame {
 
     interfazCliente incli=new interfazCliente();
     interfazInventario ininv= new interfazInventario();
+    interfazFacturacion infac = new interfazFacturacion();
     public MenuGUI() {
         initComponents();
     }
@@ -53,6 +54,11 @@ public class MenuGUI extends javax.swing.JFrame {
         facturacionGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Facturacion.png"))); // NOI18N
         facturacionGUI.setText("Facturacion");
         facturacionGUI.setFocusPainted(false);
+        facturacionGUI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                facturacionGUIActionPerformed(evt);
+            }
+        });
 
         cierreCajaGUI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Cierrecaja.png"))); // NOI18N
         cierreCajaGUI.setText("Cierre de caja");
@@ -172,6 +178,12 @@ public class MenuGUI extends javax.swing.JFrame {
             ininv.setVisible(true);
         }
     }//GEN-LAST:event_mantInvGUIActionPerformed
+
+    private void facturacionGUIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facturacionGUIActionPerformed
+        if (evt.getSource()== facturacionGUI) {
+            infac.setVisible(true);
+        }
+    }//GEN-LAST:event_facturacionGUIActionPerformed
 
     /**
      * @param args the command line arguments

@@ -5,11 +5,13 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
+
 public class interfazCliente extends javax.swing.JFrame {
     
     public interfazCliente() {
         initComponents();
         cargarClientes();
+        
     }
 
     /**
@@ -305,17 +307,20 @@ public class interfazCliente extends javax.swing.JFrame {
     private void diagagreCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diagagreCliActionPerformed
         // TODO add your handling code here:
         Cliente cliente1 = new Cliente();
+        interfazFacturacion infaz =new interfazFacturacion();
         cliente1.setClnombre(txtfieldNomCli.getText());
         cliente1.setClnumeroTel(txtfieldnumTelClidiag.getText());
         cliente1.setClemail(txtfieldemClidiag.getText());
         cliente1.setClnumero(00+Main.cl.size());
         
         Main.cl.add(cliente1);
+        
         JOptionPane.showMessageDialog(this, "Cliente ingresado exitosamente con el numero: 00"+ cliente1.getClnumero());
         txtfieldNomCli.setText("");
         txtfieldnumTelClidiag.setText("");
         txtfieldemClidiag.setText("");
         cargarClientes();
+        
     }//GEN-LAST:event_diagagreCliActionPerformed
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
@@ -336,6 +341,7 @@ public class interfazCliente extends javax.swing.JFrame {
             clientemod.setClnumero(00+Main.cl.size());
             Main.cl.set(modificarFila, clientemod);
             cargarClientes();
+            
         } 
         JOptionPane.showMessageDialog(this, "Cliente modificado exitosamente con el numero: 00"+ clientemod.getClnumero());
         txtfieldNomCli1.setText("");
@@ -363,6 +369,7 @@ public class interfazCliente extends javax.swing.JFrame {
             modeloDatos.setValueAt(cliente1.getClnumeroTel(), i, 2);
             modeloDatos.setValueAt(cliente1.getClemail(), i, 3);
         }
+       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -60,7 +60,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente " + "Numero:" + clnumero + ", Nombre:" + clnombre + ", Telefono:" + clnumeroTel + ", Email:" + clemail;
+        return    clnombre +" "+  clnumeroTel +" "+ clemail;
     }
 
     public void clnumero() {
