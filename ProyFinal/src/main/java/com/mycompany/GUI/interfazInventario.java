@@ -191,7 +191,6 @@ public class interfazInventario extends javax.swing.JFrame {
                 "Codigo", "Nombre", "Precio", "Cantidad"
             }
         ));
-        tablaInventario.setColumnSelectionAllowed(true);
         tablaInventario.getTableHeader().setReorderingAllowed(false);
         scrollClientes.setViewportView(tablaInventario);
         tablaInventario.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);

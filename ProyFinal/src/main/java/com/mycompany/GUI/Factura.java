@@ -1,32 +1,37 @@
 package com.mycompany.GUI;
-//Clase para crear el objeto de Cliente
 
-//Clase para crear el objeto de Cliente
 public class Factura {
-    private float total;
+
+    public String getProducto() {
+        return producto;
+    }
+
+    public void setProducto(String producto) {
+        this.producto = producto;
+    }
+
+    public Factura(String producto) {
+        this.producto = producto;
+    }
+    private String producto;
+    private String total;
     private float iva;
-    private float subtotal;
-    private float cantidadart;
+    private String subtotal;
+    private String cantidadart;
     
-    public float getCantidadart() {
+    public String getCantidadart() {
         return cantidadart;
     }
 
-    public void setCantidadart(float cantidadart) {
+    public void setCantidadart(String cantidadart) {
         this.cantidadart = cantidadart;
     }
-    
-    public Factura(float cantidadart) {
-        this.cantidadart = cantidadart;
-    }
-    
 
-    
-    public float getTotal() {
+    public String getTotal() {
         return total;
     }
 
-    public void setTotal(float total) {
+    public void setTotal(String total) {
         this.total = total;
     }
 
@@ -38,16 +43,16 @@ public class Factura {
         this.iva = iva;
     }
 
-    public float getSubtotal() {
+    public String getSubtotal() {
         return subtotal;
     }
 
-    public void setSubtotal(float subtotal) {
+    public void setSubtotal(String subtotal) {
         this.subtotal = subtotal;
     }
 
-    public Factura(float total, float iva, float subtotal, float cantidadart) {
-
+    public Factura(String producto, String total, float iva, String subtotal, String cantidadart) {
+        this.producto=producto;
         this.total = total;
         this.iva = iva;
         this.subtotal = subtotal;

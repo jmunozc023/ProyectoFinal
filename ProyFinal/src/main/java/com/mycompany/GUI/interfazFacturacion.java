@@ -14,6 +14,7 @@ public class interfazFacturacion extends javax.swing.JFrame {
         initComponents();
         relcomboboxInv();
         relcomboboxCli();
+        relcomboboxcant();
     }
 
     /**
@@ -36,6 +37,7 @@ public class interfazFacturacion extends javax.swing.JFrame {
         titcant = new javax.swing.JLabel();
         SelCant = new javax.swing.JComboBox<>();
         refreshBoton = new javax.swing.JButton();
+        Agregarfac = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -78,12 +80,17 @@ public class interfazFacturacion extends javax.swing.JFrame {
 
         titcant.setText("Cantidad");
 
-        SelCant.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         refreshBoton.setText("Actualizar");
         refreshBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshBotonActionPerformed(evt);
+            }
+        });
+
+        Agregarfac.setText("Agregar");
+        Agregarfac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarfacActionPerformed(evt);
             }
         });
 
@@ -112,7 +119,9 @@ public class interfazFacturacion extends javax.swing.JFrame {
                     .addComponent(SelInventario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(SelCant, 0, 184, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(refreshBoton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(refreshBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Agregarfac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(99, 99, 99))
         );
         layout.setVerticalGroup(
@@ -129,7 +138,8 @@ public class interfazFacturacion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SelInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TitProd))
+                    .addComponent(TitProd)
+                    .addComponent(Agregarfac))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SelCant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -155,6 +165,12 @@ public class interfazFacturacion extends javax.swing.JFrame {
     private void SelInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelInventarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SelInventarioActionPerformed
+
+    private void AgregarfacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarfacActionPerformed
+        if (evt.getSource()== Agregarfac) {
+            
+        }
+    }//GEN-LAST:event_AgregarfacActionPerformed
     
     /**
      * @param cl
@@ -177,9 +193,29 @@ public class interfazFacturacion extends javax.swing.JFrame {
             SelInventario.addItem(Main.inv.get(i).toString());
         }
     }
-    
+    private void relcomboboxcant(){
+        
+        for (int i = 0; i < 100; i++) {
+            SelCant.addItem(String.valueOf(i));
+        }
+    }
 
+    private void cargarFactura(){
+        DefaultTableModel modelo = new DefaultTableModel(new String[]{"Producto", "Cantidad", "Subtototal"}, Main.fac.size());
+        tablaFacturacion.setModel(modelo);
+        
+        TableModel modeloDatos= tablaFacturacion.getModel();
+        for (int i = 0; i < Main.fac.size(); i++) {
+            Factura factura=Main.fac.get(i);
+            modeloDatos.setValueAt(factura.getProducto(), i, 0);
+            modeloDatos.setValueAt(factura.getCantidadart(), i, 1);
+            modeloDatos.setValueAt(factura.getSubtotal(), i, 2);
+            
+        }
+       
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Agregarfac;
     private javax.swing.JComboBox<String> SelCant;
     private javax.swing.JComboBox<String> SelCliente;
     private javax.swing.JComboBox<String> SelInventario;
