@@ -76,24 +76,28 @@
               <Component id="Titulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="TitCliente" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="TitCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="SelCliente" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                      <Component id="refreshBoton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="refreshBoton" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="Agregarfac" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="SelInventario" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TitProd" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="SelCant" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="titcant" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="SelInventario" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="TitProd" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Agregarfac" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="SelCant" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="titcant" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="142" max="32767" attributes="0"/>
+              <EmptySpace pref="132" max="32767" attributes="0"/>
               <Component id="scrollfactura" min="-2" pref="234" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
           </Group>
@@ -197,6 +201,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="refreshBoton">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Refresh.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Actualizar"/>
       </Properties>
       <Events>
@@ -205,6 +212,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="Agregarfac">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Add.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Agregar"/>
       </Properties>
       <Events>
