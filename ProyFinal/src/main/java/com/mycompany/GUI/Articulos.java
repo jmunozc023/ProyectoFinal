@@ -61,6 +61,12 @@ public class Articulos {
     public String toString() {
         return  invNombre+" Cant. disponible: " +  cantDisp+" Prec. uni.: " + precio;
     }
+    public String toString1() {
+        return  invNombre;
+    }
+    public String toString2() {
+        return  " "+ precio;
+    }
 
 
     

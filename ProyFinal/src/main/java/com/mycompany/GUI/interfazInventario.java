@@ -335,7 +335,7 @@ public class interfazInventario extends javax.swing.JFrame {
             Main.inv.set(modificarFila, articulomod);
             cargarInventario();
         } 
-        JOptionPane.showMessageDialog(this, "Cliente modificado exitosamente con el numero: 00"+ articulomod.getPosicion());
+        JOptionPane.showMessageDialog(this, "Articulo modificado exitosamente con el numero: 00"+ articulomod.getPosicion());
         txtfieldNomInv1.setText("");
         txtfieldcantInvdiag1.setText("");
         txtfieldprecInvdiag1.setText("");

@@ -307,7 +307,7 @@ public class interfazCliente extends javax.swing.JFrame {
     private void diagagreCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diagagreCliActionPerformed
         // TODO add your handling code here:
         Cliente cliente1 = new Cliente();
-        interfazFacturacion infaz =new interfazFacturacion();
+        
         cliente1.setClnombre(txtfieldNomCli.getText());
         cliente1.setClnumeroTel(txtfieldnumTelClidiag.getText());
         cliente1.setClemail(txtfieldemClidiag.getText());

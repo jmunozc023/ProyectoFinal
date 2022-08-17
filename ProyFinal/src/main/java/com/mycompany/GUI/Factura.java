@@ -60,8 +60,9 @@ public class Factura {
     }
       @Override
     public String toString() {
-        return "Factura{" + ", total=" + total + ", iva=" + iva + ", subtotal=" + subtotal + ", cantidad=" + cantidadart + '}';
+        return producto + cantidadart + total +  iva +  subtotal ;
     }
+    
 
     
     

@@ -55,17 +55,25 @@
                   <Component id="titcant" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="SelCliente" max="32767" attributes="0"/>
-                  <Component id="SelInventario" max="32767" attributes="0"/>
-                  <Component id="SelCant" pref="184" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="SelCliente" max="32767" attributes="0"/>
+                          <Component id="SelInventario" max="32767" attributes="0"/>
+                          <Component id="SelCant" pref="184" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="refreshBoton" max="32767" attributes="0"/>
+                          <Component id="Agregarfac" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="encabezadoFac" min="-2" pref="460" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="refreshBoton" max="32767" attributes="0"/>
-                  <Component id="Agregarfac" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -97,7 +105,9 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="132" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Component id="encabezadoFac" min="-2" pref="23" max="-2" attributes="0"/>
+              <EmptySpace pref="77" max="32767" attributes="0"/>
               <Component id="scrollfactura" min="-2" pref="234" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
           </Group>
@@ -220,6 +230,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AgregarfacActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="encabezadoFac">
     </Component>
   </SubComponents>
 </Form>
