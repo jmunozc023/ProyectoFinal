@@ -40,6 +40,7 @@ public class interfazFacturacion extends javax.swing.JFrame {
         refreshBoton = new javax.swing.JButton();
         Agregarfac = new javax.swing.JButton();
         encabezadoFac = new javax.swing.JLabel();
+        Totalfac = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -52,7 +53,7 @@ public class interfazFacturacion extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Producto", "Cantidad", "Subtotal", "Impuesto"
+                "Producto", "Cantidad", "Subtotal"
             }
         ));
         tablaFacturacion.setColumnSelectionAllowed(true);
@@ -103,23 +104,14 @@ public class interfazFacturacion extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(scrollfactura, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(205, 205, 205)
-                        .addComponent(Titulo)))
-                .addGap(0, 48, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TitCliente)
-                    .addComponent(TitProd)
-                    .addComponent(titcant))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TitCliente)
+                            .addComponent(TitProd)
+                            .addComponent(titcant))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(SelCliente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(SelInventario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -129,8 +121,18 @@ public class interfazFacturacion extends javax.swing.JFrame {
                             .addComponent(refreshBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Agregarfac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(99, 99, 99))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(encabezadoFac, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Titulo)
+                                .addGap(178, 178, 178))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(scrollfactura, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 42, Short.MAX_VALUE)))
+                        .addGap(48, 48, 48))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(encabezadoFac, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Totalfac, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -157,9 +159,11 @@ public class interfazFacturacion extends javax.swing.JFrame {
                             .addComponent(titcant))))
                 .addGap(32, 32, 32)
                 .addComponent(encabezadoFac, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(scrollfactura, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Totalfac, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pack();
@@ -186,17 +190,11 @@ public class interfazFacturacion extends javax.swing.JFrame {
             faccli();
             facprod();
             cargarFactura();
-            
-            
-            
-            
+            sumarColumna();
         }
     }//GEN-LAST:event_AgregarfacActionPerformed
     
-    /**
-     * @param cl
-     * @param args the command line arguments
-     */
+    
     private void relcomboboxCli(){
         
         for (int i = 0; i < Main.cl.size(); i++) {
@@ -243,8 +241,12 @@ public class interfazFacturacion extends javax.swing.JFrame {
             String nombre =Main.inv.get(prod).getInvNombre();
             String precio =Main.inv.get(prod).getPrecio();
             String cant= (String) SelCant.getSelectedItem();
+            int sub1 = Integer.parseInt(precio);
+            int can = Integer.parseInt(cant);
+            int subt = (sub1*can);
+            String subto= Integer.toString(subt);
             fact.setProducto(nombre);
-            fact.setSubtotal(precio);
+            fact.setSubtotal(subto);
             fact.setCantidadart(cant);
             Main.fac.add(fact);
     }
@@ -255,6 +257,15 @@ public class interfazFacturacion extends javax.swing.JFrame {
         String ema = Main.cl.get(prod).getClemail();
         encabezadoFac.setText("Bienvenido " +nombre+ " su numero telefonico: "+ tel +" y su correo electronico "+ ema+" .");
     }
+    private void sumarColumna(){
+        int fila=0;
+        int tot=0;
+        for (int i = 0; i < tablaFacturacion.getRowCount(); i++) {
+            fila= Integer.parseInt(tablaFacturacion.getValueAt(i, 2).toString());
+            tot+= fila;
+        }
+        Totalfac.setText("Total:..... " +tot);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Agregarfac;
     private javax.swing.JComboBox<String> SelCant;
@@ -263,6 +274,7 @@ public class interfazFacturacion extends javax.swing.JFrame {
     private javax.swing.JLabel TitCliente;
     private javax.swing.JLabel TitProd;
     private javax.swing.JLabel Titulo;
+    private javax.swing.JLabel Totalfac;
     private javax.swing.JLabel encabezadoFac;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton refreshBoton;
