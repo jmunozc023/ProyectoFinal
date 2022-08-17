@@ -240,15 +240,21 @@ public class interfazFacturacion extends javax.swing.JFrame {
             Factura fact =  new Factura(produc);
             String nombre =Main.inv.get(prod).getInvNombre();
             String precio =Main.inv.get(prod).getPrecio();
+            String dispo =Main.inv.get(prod).getCantDisp();
             String cant= (String) SelCant.getSelectedItem();
             int sub1 = Integer.parseInt(precio);
             int can = Integer.parseInt(cant);
+            int disp= Integer.parseInt(dispo);
             int subt = (sub1*can);
+            int resta= (disp-can);
             String subto= Integer.toString(subt);
+            String rest= Integer.toString(resta);
             fact.setProducto(nombre);
             fact.setSubtotal(subto);
             fact.setCantidadart(cant);
+            Main.inv.get(prod).setCantDisp(rest);
             Main.fac.add(fact);
+            
     }
     private void faccli(){
         int prod = SelCliente.getSelectedIndex();

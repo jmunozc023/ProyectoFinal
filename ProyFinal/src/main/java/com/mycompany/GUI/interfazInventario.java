@@ -46,6 +46,7 @@ public class interfazInventario extends javax.swing.JFrame {
         editar = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
         eliminar1 = new javax.swing.JButton();
+        Refrescar = new javax.swing.JButton();
 
         datosInventario.setBounds(new java.awt.Rectangle(100, 100, 260, 280));
 
@@ -231,6 +232,14 @@ public class interfazInventario extends javax.swing.JFrame {
             }
         });
 
+        Refrescar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Refresh.png"))); // NOI18N
+        Refrescar.setText("Actualizar");
+        Refrescar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RefrescarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -239,12 +248,13 @@ public class interfazInventario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(agregar)
-                            .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Refrescar, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                            .addComponent(eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(editar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(agregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(eliminar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
                         .addComponent(scrollClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(120, 120, 120)
@@ -264,6 +274,8 @@ public class interfazInventario extends javax.swing.JFrame {
                         .addComponent(editar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(eliminar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Refrescar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(eliminar1)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -346,10 +358,15 @@ public class interfazInventario extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_eliminar1ActionPerformed
 
+    private void RefrescarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefrescarActionPerformed
+        clearInventario();
+        cargarInventario();
+    }//GEN-LAST:event_RefrescarActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    private void cargarInventario(){
+    public void cargarInventario(){
         DefaultTableModel modelo = new DefaultTableModel(new String[]{"Codigo", "Nombre", "Cantidad", "Precio unitario"}, Main.inv.size());
         tablaInventario.setModel(modelo);
         
@@ -362,8 +379,12 @@ public class interfazInventario extends javax.swing.JFrame {
             modeloDatos.setValueAt(articulo1.getPrecio(), i, 3);
         }
     }
+    public void clearInventario(){
+       tablaInventario.removeAll();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Refrescar;
     private javax.swing.JLabel Titulo;
     private javax.swing.JButton agregar;
     private javax.swing.JDialog datosInventario;

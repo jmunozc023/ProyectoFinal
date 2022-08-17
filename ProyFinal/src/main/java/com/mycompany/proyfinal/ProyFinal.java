@@ -1,6 +1,7 @@
 package com.mycompany.proyfinal;
 
 import com.mycompany.GUI.Main;
+import com.mycompany.GUI.Main;
 
 
 public class ProyFinal {
