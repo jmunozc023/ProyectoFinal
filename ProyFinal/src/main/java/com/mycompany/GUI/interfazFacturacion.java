@@ -56,7 +56,6 @@ public class interfazFacturacion extends javax.swing.JFrame {
                 "Producto", "Cantidad", "Subtotal"
             }
         ));
-        tablaFacturacion.setColumnSelectionAllowed(true);
         tablaFacturacion.getTableHeader().setReorderingAllowed(false);
         scrollfactura.setViewportView(tablaFacturacion);
         tablaFacturacion.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);

@@ -314,7 +314,6 @@ public class interfazInventario extends javax.swing.JFrame {
     private void diagagreInvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diagagreInvActionPerformed
         // TODO add your handling code here:
         Articulos articulo1 = new Articulos();
-        String cantidad = null;
         articulo1.setInvNombre(txtfieldNomInv.getText());
         articulo1.setCantDisp(txtfieldcantInvdiag.getText());
         articulo1.setPrecio(txtfieldprecInvdiag.getText());
